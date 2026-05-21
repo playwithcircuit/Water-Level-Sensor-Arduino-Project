@@ -16,25 +16,6 @@ This project monitors the water level in a tank or container and alerts the user
 - Beginner-friendly Arduino project
 ---
 
-# ⚙️ Components Required
-
-## Hardware
-
-- Arduino UNO
-- Water Level Sensor Module
-- LEDs
-- Active Buzzer
-- I2C LCD Display (Optional)
-- Breadboard
-- Jumper Wires
-- USB Cable
-
-## Software
-
-- Arduino IDE
-
----
-
 # 🔍 How Water Level Sensor Works
 
 ![Water Level Sensor](https://playwithcircuit.com/wp-content/uploads/2024/09/Water-level-sensor-hardware-overview.webp)
@@ -71,11 +52,36 @@ At the same time, the LCD display continuously updates the water level percentag
 This provides a clear and real-time indication of the tank status.
 
 ---
+
+# 🧰 Hardware Requirements
+
+| Component | Quantity |
+|---|---|
+| Arduino UNO R3 | 1 |
+| Water Level Sensor | 1 |
+| LCD 16x2 with I2C | 1 |
+| RGB LED (Common Cathode) | 1 |
+| Buzzer | 1 |
+| Breadboard | 1 |
+| Jumper Wires | 10 |
+| 220Ω Resistor | 1 |
+| USB Cable | 1 |
+| 12V Adapter | 1 |
+
+---
+
+# 💻 Software Requirement
+
+- Arduino IDE (Version 2.1.1 or above)
+
+---
+
 # 🔌 Circuit Connections
 
-## Water Level Sensor to Arduino
+The water level sensor connections remain the same as the basic sensor interfacing circuit.
+![Water Level Sensor](https://playwithcircuit.com/wp-content/uploads/2024/09/Water-Level-Indicator-Circuit-Diagram.webp)
 
-![Circuit Diagram](https://playwithcircuit.com/wp-content/uploads/2024/09/Wiring-Water-Level-Sensor-with-Arduino.webp)
+## Water Level Sensor Connections
 
 | Water Level Sensor | Arduino UNO |
 |---|---|
@@ -83,11 +89,11 @@ This provides a clear and real-time indication of the tank status.
 | GND | GND |
 | OUT | A0 |
 
-The sensor output pin is connected to Arduino analog pin A0 so that Arduino can continuously monitor the changing analog voltage.
+The sensor sends analog voltage data to Arduino analog pin A0.
 
 ---
 
-## I2C LCD Connections
+## LCD I2C Connections
 
 | LCD Pin | Arduino UNO |
 |---|---|
@@ -96,7 +102,33 @@ The sensor output pin is connected to Arduino analog pin A0 so that Arduino can 
 | SDA | SDA |
 | SCL | SCL |
 
-The LCD display is optional and can be used to display real-time water level readings.
+The LCD display shows the water level percentage in real time.
+
+---
+
+## RGB LED Connections
+
+The RGB LED used in this project is a common cathode type LED.
+
+| RGB LED Pin | Arduino UNO |
+|---|---|
+| Red Pin | 10 |
+| Blue Pin | 9 |
+| Green Pin | 8 |
+| Cathode | GND |
+
+The Arduino controls each color channel independently to display different water level states.
+
+---
+
+## Buzzer Connection
+
+| Buzzer | Arduino UNO |
+|---|---|
+| Positive Pin | Digital Pin 2 |
+| Negative Pin | GND |
+
+The buzzer turns ON when the water tank becomes full.
 
 ---
 
