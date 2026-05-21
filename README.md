@@ -14,15 +14,6 @@ This project monitors the water level in a tank or container and alerts the user
 - Buzzer alert for high water level
 - Optional I2C LCD support
 - Beginner-friendly Arduino project
-
----
-
-# 📷 Project Preview
-
-## Water Level Sensor Module
-
-![Water Level Sensor](https://playwithcircuit.com/wp-content/uploads/2024/09/Water-level-sensor-hardware-overview.webp)
-
 ---
 
 # ⚙️ Components Required
@@ -46,6 +37,8 @@ This project monitors the water level in a tank or container and alerts the user
 
 # 🔍 How Water Level Sensor Works
 
+![Water Level Sensor](https://playwithcircuit.com/wp-content/uploads/2024/09/Water-level-sensor-hardware-overview.webp)
+
 The water level sensor detects water using exposed conductive traces present on the sensor board.
 
 When water comes in contact with these traces:
@@ -58,6 +51,26 @@ The sensor generates an analog voltage based on the detected water level. Arduin
 
 ---
 
+## Project Overview
+
+The water level sensor continuously measures the water level and sends analog data to the Arduino UNO. The Arduino processes these readings and determines the percentage of water present inside the container.
+
+Depending on the measured water level, the RGB LED changes color according to the following conditions:
+
+- 🔴 **Red LED** → Water level below 10%
+- 🔵 **Blue LED** → Water level between 10% and 99%
+- 🟢 **Green LED** → Water level reaches 99% or above
+
+When the water level reaches the maximum threshold, the Arduino activates the buzzer to alert the user that the container is full and filling should be stopped.
+
+At the same time, the LCD display continuously updates the water level percentage, where:
+
+- **0%** indicates an empty container
+- **100%** indicates a full container
+
+This provides a clear and real-time indication of the tank status.
+
+---
 # 🔌 Circuit Connections
 
 ## Water Level Sensor to Arduino
@@ -113,7 +126,7 @@ The LCD display is optional and can be used to display real-time water level rea
 You can enhance this project further by adding:
 
 - Relay module for automatic motor control
-- ESP8266/ESP32 for IoT monitoring
+- ESP32 for IoT monitoring
 - Mobile app notifications
 - OLED display
 - Wireless monitoring system
@@ -127,4 +140,6 @@ Read the complete tutorial here:
 [How does a Water Level Sensor Work and Interface it with Arduino?](https://playwithcircuit.com/water-level-sensor-arduino-tutorial/)
 
 
-Project tutorial and explanation by Play with Circuit.
+# 🙌 Credits
+
+Project tutorial and explanation by **Play with Circuit**__.
